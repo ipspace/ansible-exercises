@@ -1,0 +1,27 @@
+{# VDOM Choice #}
+config vdom
+ edit {{vdom}}
+
+{# FW Addresses #}
+{% if fwaddrs is defined %}
+ config firewall address
+{% for fwa in fwaddrs %}
+  edit "{{fwa.fwaname}}"
+   set associated-interface "{{fwa.fwaint}}"
+   set subnet {{fwa.fwaip}} {{fwa.fwasubnt|default("255.255.255.255")}}
+  next
+{% endfor %}
+ next
+{% endif %}
+
+{# FW Address Groups #}
+{% if fwaddrsgrp is defined %}
+ config firewall addrgrp
+{% for fwg in fwaddrsgrp %}
+  edit "{{fwg.fwgname}}"
+   append member{% for m in fwg.fwgmember %} "{{m}}"{% endfor %}
+
+  next
+{% endfor %}
+ next
+{% endif %}

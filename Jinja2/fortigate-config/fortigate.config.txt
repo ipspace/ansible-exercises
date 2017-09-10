@@ -1,0 +1,26 @@
+config vdom
+ edit WAN
+
+ config firewall address
+  edit "HST_SERVERA_10.20.1.1"
+   set associated-interface "ZNE_INTERN"
+   set subnet 10.20.1.1 255.255.255.255
+  next
+  edit "HST_SERVERB_10.20.1.2"
+   set associated-interface "ZNE_INTERN"
+   set subnet 10.20.1.2 255.255.255.255
+  next
+  edit "NET_NETWORKA_10.20.1.0"
+   set associated-interface "ZNE_INTERN"
+   set subnet 10.20.1.0 255.255.255.0
+  next
+ next
+
+ config firewall addrgrp
+  edit "ADG_INTERN_GROUP1"
+   append member "HST_SERVERA_10.20.1.1" "NET_NETWORKA_10.20.1.0"
+  next
+  edit "ADG_INTERN_GROUP2"
+   append member "HST_ZNE_SERVERB_10.20.1.2" "NET_ZNE_NETWORKA_10.20.1.0"
+  next
+ next

@@ -1,0 +1,24 @@
+---
+vdom: WAN
+
+fwaddrs:
+- fwaname: HST_SERVERA_10.20.1.1
+  fwaint: ZNE_INTERN
+  fwaip: 10.20.1.1
+- fwaname: HST_SERVERB_10.20.1.2
+  fwaint: ZNE_INTERN
+  fwaip: 10.20.1.2
+- fwaname: NET_NETWORKA_10.20.1.0
+  fwaint: ZNE_INTERN
+  fwaip: 10.20.1.0
+  fwasubnt: 255.255.255.0
+
+fwaddrsgrp:
+- fwgname: ADG_INTERN_GROUP1
+  fwgmember:
+    HST_SERVERA_10.20.1.1
+    NET_NETWORKA_10.20.1.0
+- fwgname: ADG_INTERN_GROUP2
+  fwgmember:
+    HST_ZNE_SERVERB_10.20.1.2
+    NET_ZNE_NETWORKA_10.20.1.0
