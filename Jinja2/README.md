@@ -1,6 +1,6 @@
-# Hands-On Exercises for Ansible for Networking Engineers Online Course
+# Jinja2 Hands-On Exercises
 
-This repository contains additional hands-on exercises for the
+This repository contains additional Jinja2 hands-on exercises for the
 [Ansible for Networking Engineers](https://www.ipspace.net/Ansible)
 online course. Sample solutions are included in the
 course contents.
@@ -18,24 +18,4 @@ full-blown network automation systems and solutions.
 
 ## Contributing an exercise
 
-To contribute an exercise:
-
-* Fork the repository
-* Create a subdirectory in the most appropriate directory
-* Add all files needed to start working on the exercise
-  (example: YAML data model and final result for Jinja2 exercises)
-* Write a short exercise description (preferably using Markdown syntax).
-  Don't forget to add a link to your web page or LinkedIn profile.
-* Submit a pull request
-
-It would be ideal if you'd also contribute a solution to your exercise:
-
-* Create _solution_ subdirectory in your exercise directory
-* Copy all files needed to describe and validate the solution.
-
-  For example, include YAML data model, Jinja2 template, final results
-  and a short description of hacks you've used in your template for
-  Jinja2 exercises.
-
-**Note**: the solution will not be public but accessible only to the
-students attending the online course.
+See [top-level README](https://github.com/ipspace/ansible-exercises/blob/master/README.md#contributing-an-exercise)
