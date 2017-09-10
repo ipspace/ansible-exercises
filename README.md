@@ -10,7 +10,11 @@ the course; you'll find the author name in the exercise description.
 
 ## Using the exercises
 
-Clone the repository and start working ;)
+Clone the repository and start working ;) You might consider registering for the [Ansible for Networking Engineers](https://www.ipspace.net/Ansible) webinar
+or online course if you get stuck.
+
+Alternatively, explore the [Building Network Automation Solutions](https://www.ipspace.net/NetAutSol) online course if you'd like to learn how to build
+full-blown network automation systems and solutions.
 
 ## Contributing an exercise
 
