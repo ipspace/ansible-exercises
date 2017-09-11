@@ -1,0 +1,90 @@
+---
+branch_type: L2
+
+hostname: branch2-wan
+
+lan_ports:
+  
+  - interface: GigabitEthernet4
+    state_enabled: true 
+    description: branch2-lan_ge0/1
+    trunk: false
+    trunk_dotq: n/a
+    ip: false
+    ip_address: n/a
+    ip_mask: n/a
+    ip_helper: false
+    ip_helper_addresses: n/a
+    acl_in: false
+    acl_in_name: n/a
+    acl_out: true
+    acl_out_name: acl-out
+    
+  - interface: GigabitEthernet4.10
+    state_enabled: true 
+    description: data
+    trunk: true
+    trunk_dot1q: 10
+    ip: true
+    ip_address: 172.22.10.1
+    ip_mask: 255.255.255.0
+    ip_helper: true
+    ip_helper_addresses:
+      - 172.22.10.11
+      - 172.22.10.12
+    acl_in: false
+    acl_in_name: n/a
+    acl_out: false
+    acl_out_name: n/a
+      
+  - interface: GigabitEthernet4.11
+    state_enabled: true
+    description: voice
+    trunk: true
+    trunk_dot1q: 11
+    ip: true
+    ip_address: 172.22.11.1
+    ip_mask: 255.255.255.0
+    ip_helper: true
+    ip_helper_addresses:
+      - 172.22.10.11
+      - 172.22.10.12
+    acl_in: false
+    acl_in_name: n/a
+    acl_out: false
+    acl_out_name: n/a
+    
+  - interface: GigabitEthernet4.12
+    state_enabled: true
+    description: guest
+    trunk: true
+    trunk_dot1q: 12
+    ip: true
+    ip_address: 172.22.12.1
+    ip_mask: 255.255.255.0
+    ip_helper: true
+    ip_helper_addresses:
+      - 172.22.10.11
+      - 172.22.10.12
+    acl_in: true
+    acl_in_name: acl-guest-in
+    acl_out: false
+    acl_out_name: n/a
+
+  - interface: GigabitEthernet4.13
+    state_enabled: true
+    description: test
+    trunk: true
+    trunk_dot1q: 13
+    ip: true
+    ip_address: 172.22.13.1
+    ip_mask: 255.255.255.0
+    ip_helper: true
+    ip_helper_addresses:
+      - 172.22.10.11
+      - 172.22.10.12
+      - 172.22.10.13
+    acl_in: false
+    acl_in_name: n/a
+    acl_out: false
+    acl_out_name: n/a

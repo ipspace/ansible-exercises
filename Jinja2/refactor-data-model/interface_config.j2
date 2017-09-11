@@ -1,0 +1,27 @@
+{% for lan_port in lan_ports %}
+interface {{ lan_port.interface }}
+ description {{ lan_port.description }}
+{% if lan_port.trunk == true %}
+ encapsulation dot1Q {{ lan_port.trunk_dot1q }}
+{% endif %}
+{% if lan_port.ip == true %}
+ ip address {{ lan_port.ip_address }} {{lan_port.ip_mask}}
+{% else %}
+ no ip address
+{% endif %}
+{% if lan_port.ip_helper == true %}
+{% for helper_address in lan_port.ip_helper_addresses %}
+ ip helper-address {{ helper_address }}
+{% endfor%}
+{% endif %}
+{% if lan_port.acl_in == true %}
+ ip access-group {{lan_port.acl_in_name}} in
+{% endif %} 
+{% if lan_port.acl_out == true %}
+ ip access-group {{lan_port.acl_out_name}} out
+{% endif %} 
+{% if lan_port.state_enabled == true %}
+ delay 25000
+ no shutdown
+{% endif %}
+{% endfor%}
